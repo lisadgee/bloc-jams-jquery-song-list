@@ -1,3 +1,4 @@
+//Album object.  Dummy data that we will later replace dynamically via an API
 const album = {
   title: 'The Colors',
   artist: 'Pablo Picasso',
