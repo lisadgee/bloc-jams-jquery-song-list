@@ -1,8 +1,13 @@
 /* This file declares a class, Player, instantiates it, and
 assigns it to a global
- player variable (see last line of code).*/
+ player variable (see last line of code).
+
+The Player class contains four methods:  constructor(), playPause(), SkipTo()
+and setVolume().
+
+ */
 class Player {
-  constructor () {  //Method that sets initial values of the object properties.
+  constructor () {  //Method that sets initial values of object properties below.
     this.currentlyPlaying = album.songs[0]; //first item in song list
     this.playState = 'stopped';
     this.volume = 80;
@@ -37,9 +42,19 @@ class Player {
       // Clear classes on the song that's currently playing
       this.currentlyPlaying.element.removeClass('playing paused');
 
-      // Update our currentlyPlaying and playState properties
+      /* Update our currentlyPlaying and playState properties
+
+        Instantiates a new sound object using this.currentlyPlaying,
+        which was just updated to song.
+      */
       this.currentlyPlaying = song;
       this.playState = 'stopped';
+      /*
+      The soundObject instantiates a new buzz.sound object using the
+      soundFileUrl property of this.currentlyPlaying. The buzz variable
+      doesn't appear to be initialized here, so presumably it's a
+      dependency loaded elsewhere.
+      */
       this.soundObject = new buzz.sound(this.currentlyPlaying.soundFileUrl);
     }
     if (this.playState === 'paused' || this.playState === 'stopped') {

@@ -1,4 +1,6 @@
-//Album object.  Dummy data that we will later replace dynamically via an API
+/*Album object.  Dummy data that we will later replace dynamically via an API
+  Array of songs stored in the album object (album.songs) as an array of objects.
+*/
 const album = {
   title: 'The Colors',
   artist: 'Pablo Picasso',
